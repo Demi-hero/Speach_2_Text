@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Uploads</h3>
+<p>This will show the uploaded data</p>
+
+<a href="/add" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"> Add Audio </i>
+ </a>
+<p></p>
+<a href= "/convert" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus">Convert Uploads</i>
+</a>
+<p></p>
+<a href= "/delete" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus">Delete All Files</i>
+</a>
+<h3>Uploaded Files</h3>
+{% for File in Files %}
+<div class = "audio">
+    <a href="{{File.audioUrl}}">
+    {{File.title}}
+    </a>
+</div>
+
+<div class = "text">
+    <a href="{{File.textUrl}}">
+        Transcription
+    </a>
+</div>
+{% else %}
+<p>No Files Found</p>
+{% endfor %}
+
+{% if next_page_token %}
+<nav>
+  <ul class="pager">
+    <li><a href="?page_token={{next_page_token}}">More</a></li>
+  </ul>
+</nav>
+{% endif %}
+
+</body>
+</html>

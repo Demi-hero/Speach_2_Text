@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Display</title>
+</head>
+<body>
+{% for File in Files %}
+<div>{{File.id}}</div>
+<div class = "audio">
+    {{File.title}}
+</div>
+<div>
+    {{File.audioUrl}}
+</div>
+<div class = "text">
+        {{File.textUrl}}
+</div>
+{% else %}
+<p>No Files Found</p>
+{% endfor %}
+</body>
+</html>

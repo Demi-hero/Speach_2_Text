@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Speach to Text Page</h1>
+<p>Click the upload button to upload the files you want transcribed.</p>
+
+<form method = "POST" enctype = "multipart/form-data">
+    <div class="form-group">
+        <label for="title">Upload Name</label>
+        <input type="text" name="title" id="title" value="{{file.title}}" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label> Select Audio Folder </label>
+        <div class="custom-file">
+            <input type = "file" name = "audio" id="audio" class="custom-file-input" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" name="textUrl" id="texturl" value="Awaiting Transcription" class="hidden-data">
+    </div>
+
+    <button type = "submit" class="btn aud-prim">Upload</button>
+</form>
+</body>
+</html>
